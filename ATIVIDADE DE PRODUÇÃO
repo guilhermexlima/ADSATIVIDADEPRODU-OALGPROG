@@ -1,0 +1,71 @@
+#include <stdio.h>
+//
+int main() {
+    printf("Aluno: Guilherme F Lima \n Análise e Desenvolvimento de Sistemas \n Unilasalle \n Não sei minha matricula \n");
+    //o inicio foi com base no código da pg 114
+    float numero1,numero2,op;
+    int opcao;
+      printf("Digite a operação desejada:\n 1 - Subtração \n 2 - Soma \n 3 - Multiplicação \n 4 - Divisão\n 5 - Raiz Quadrada \n 6 - Potência \n ");
+
+    scanf("%d", &opcao);
+    while((opcao!=1) && (opcao!=2) && (opcao!=3) && (opcao!=4) && (opcao!=5) && (opcao!=6)){
+      printf("Opção inválida \n Digite a operação desejada:\n");
+    scanf("%d", &opcao);
+    
+    }
+    //base nesse site a lógica http://linguagemc.com.br/operadores-logicos-em-c/
+    switch (opcao) {
+      case 1: 
+      printf("Você selecionou a operação de subtração\nDigite o valor que deseja fazer a operação:\n");
+      //float numero1,numero2,op;
+      scanf("%f", &numero1);
+      printf("Digite o subtraendo:\n");
+      scanf("%f", &numero2);
+        op=numero1-numero2;
+          printf("O resultado da subtração é: %.2f\n", op);
+      break;
+      case 2: 
+      printf("Você selecionou a operação de soma\nDigite o primeiro valor que deseja utilizar:\n");
+      //float numero1,numero2,op;
+      scanf("%f", &numero1);
+      printf("Digite o segundo valor:\n");
+      scanf("%f", &numero2);
+        op=numero1+numero2;
+          printf("O resultado da soma é: %.2f\n", op);
+      break;
+      case 3: 
+      printf("Você selecionou a operação de multiplicação\nDigite o valor que deseja fazer a operação:\n");
+      scanf("%f", &numero1);
+      printf("Digite o multiplicador:\n");
+      scanf("%f", &numero2);
+        op=numero1*numero2;
+          printf("O resultado da multiplicação é: %.2f\n", op);
+      break;
+      case 4: 
+      printf("Você selecionou a operação de divisão\nDigite o valor que deseja fazer a operação:\n");
+      scanf("%f", &numero1);
+      printf("Digite o Divisor:\n");
+      scanf("%f", &numero2);
+        while(numero2==0){
+          printf("O divisor não pode ser 0\nDigite um valor válido:\n");
+          scanf("%f", &numero1);}
+          op=numero1/numero2;
+          printf("O resultado da multiplicação é: %.2f\n", op);
+      break;
+      case 5: 
+      printf("Você selecionou a operação de raiz quadrada\nDigite o valor que deseja fazer a operação:\n");
+      scanf("%f", &numero1);
+          op=sqrt(numero1);
+          printf("O resultado da raiz quadradica de %.2f é: %.2f\n", numero1, op);
+      break;
+      case 6: 
+      printf("Você selecionou a operação de potência \nDigite o valor que deseja fazer a operação:\n");
+      scanf("%f", &numero1);
+      printf("Digite o expoente:\n");
+      scanf("%f", &numero2);
+      op=pow(numero1, numero2); //função pot não funcionou, achei a pow no site https://acervolima.com/
+      printf("O resultado da operação é: %.2f\n", op);  
+      break;
+    } ;//switch foi baseado na pagina 190 do ebook
+    return 0;
+}
